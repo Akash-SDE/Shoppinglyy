@@ -21,7 +21,7 @@ Responsive Design: Fully responsive layout for optimal viewing on all devices.
 Payment Integration: Integration with  PayPal payment gateways for secure online payments.
 
 # Installation
-Clone the repository: git clone https://github.com/your-username/ecommerce.git
+Clone the repository: https://github.com/Akash-SDE/Shoppinglyy.git
 
 Apply migrations: python manage.py migrate
 
