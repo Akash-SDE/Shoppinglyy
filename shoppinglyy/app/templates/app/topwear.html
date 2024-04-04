@@ -1,0 +1,42 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Top Wear{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+ <div class="row">
+  <div class="col-sm-3">
+    <div class="list-group">
+        <a href="{% url 'topwear' %}" class="list-group-item list-group-item-action active" aria-current="true">
+         All top wears
+        </a>
+        <a href="{% url 'topweardata' 'Lounge' %}" class="list-group-item list-group-item-action" aria-current="true">Lounge</a>
+        <a href="{% url 'topweardata' 'Bullmer' %}" class="list-group-item list-group-item-action">Bullmer</a>
+        <a href="{% url 'topweardata' 'SymbolPremium' %}" class="list-group-item list-group-item-action">Symbol Premium</a>
+        <a href="{% url 'topweardata' 'Veirdo' %}" class="list-group-item list-group-item-action">Veirdo</a>
+        <a href="{% url 'topweardata' 'Lewel' %}" class="list-group-item list-group-item-action">Lewel</a>
+        <a href="{% url 'topweardata' 'JUGULAR' %}" class="list-group-item list-group-item-action">JUGULAR</a>
+        <a href="{% url 'topweardata' 'AllenSolly' %}" class="list-group-item list-group-item-action">AllenSolly</a>
+        <a href="{% url 'topweardata' 'Fabricorn' %}" class="list-group-item list-group-item-action">Fabricorn</a>
+        <a href="{% url 'topweardata' 'ShoppinglyyBrand' %}" class="list-group-item list-group-item-action">Shoppinglyy Brand</a>
+        <a href="{% url 'topweardata' 'LEOTUDE' %}" class="list-group-item list-group-item-action">LEOTUDE</a>
+        <a href="{% url 'topweardata' 'below' %}" class="list-group-item list-group-item-action">Below 500</a>
+        <a href="{% url 'topweardata' 'above' %}" class="list-group-item list-group-item-action">Above 500</a>
+        <!-- <a class="list-group-item list-group-item-action disabled">A disabled link item</a> -->
+      </div>
+  </div>
+  <div class="col-sm-8 offset-sm-1">
+   {% for product in topwears %}
+    <div class="col-sm-4 text-center mb-4">
+        <a href="{% url 'product-detail' product.id %}" class="btn">
+            <div class="item">
+                <img src="{{product.product_image.url}}" alt="" height="300" class="">
+                <div class="fw-bold">{{product.title}}</div>
+                <div class="fw-bold">Rs. {{product.discounted_price}}<small class="fw-light text-decoration-line-through">{{product.selling_price}}</small></div>
+            </div>
+        </a>
+    {% endfor %}
+    </div>
+  </div>
+ </div>
+</div>
+{% endblock main-content %}
